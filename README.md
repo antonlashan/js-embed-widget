@@ -64,10 +64,10 @@ Comming soon
 
 - Install [docker](https://docs.docker.com/get-docker)
 - Build image with environment specific
-  `docker build --build-arg appEnv=prod -t error_report_fe .`
+  `docker build --build-arg appEnv=prod -t embed_widget .`
 
 if `appEnv` doesn't specify then default env will be the `testing`
 
-- Run the docker `docker run -p 80:80 error_report_fe`
+- Run the docker `docker run -p 80:80 embed_widget`
 
 ---
