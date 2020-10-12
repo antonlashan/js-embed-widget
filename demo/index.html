@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <title>Demo page for the error report</title>
+    <meta charset="utf-8" />
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+     
+      .toolbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        background-color: #1976d2;
+        color: white;
+        font-weight: 600;
+      }
+
+     
+    </style>
+  </head>
+  <body>
+    <!-- Toolbar -->
+    <div class="toolbar" role="banner">
+      
+    </div>
+
+
+    <script>
+      (function (w, d, s, f, js, fjs) {
+  (js = d.createElement(s)), (fjs = d.getElementsByTagName(s)[0]);
+  js.src = f;
+  js.async = 1;
+  fjs.parentNode.insertBefore(js, fjs);
+})(window, document, 'script', './widget.js');
+    </script>
+  </body>
+</html>

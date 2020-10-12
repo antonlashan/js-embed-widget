@@ -1,0 +1,143 @@
+$theme-color: #730177;
+$font-color: #394454;
+
+#w-wrap {
+  z-index: 9999999;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+#w-badge {
+  background: $theme-color;
+  border-radius: 2px;
+  animation: pulse-blue 2s infinite;
+  div {
+    padding: 10px 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    font-size: 16px;
+  }
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+}
+
+#w-panel {
+  width: 340px;
+  height: auto;
+  background: #ffffff;
+  box-shadow: 5px 5px 20px 0 rgba($theme-color, 0.1);
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  // overflow: hidden;
+  border-top: 1px solid $theme-color;
+  visibility: hidden;
+  #w-body {
+    max-height: calc(100vh - 200px);
+    overflow-y: auto;
+    padding: 15px;
+    border-bottom: 1px solid rgba($theme-color, 0.2);
+    border-left: 1px solid rgba($theme-color, 0.2);
+    border-right: 1px solid rgba($theme-color, 0.2);
+    #w-form {
+      margin-bottom: 0;
+      label {
+        margin: 0;
+        display: flex;
+      }
+    }
+  }
+  button[type='submit'] {
+    width: 100%;
+    border-radius: 26px;
+    line-height: 40px;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s;
+    background-color: $theme-color;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-family: inherit;
+    letter-spacing: 1px;
+    outline: none;
+  }
+  &.panel-active {
+    bottom: 40px;
+    opacity: 100;
+    visibility: visible;
+  }
+  input,
+  textarea {
+    border-radius: 3px;
+    border: 1px solid rgba($theme-color, 0.5);
+    background: rgba($theme-color, 0.02);
+    padding-left: 20px;
+    outline-color: $theme-color;
+    -webkit-appearance: none;
+    width: 100%;
+    font-family: inherit;
+    padding: 20px;
+    margin-bottom: 15px;
+    color: $font-color;
+    box-sizing: border-box;
+    height: initial;
+    line-height: initial;
+  }
+  input {
+    height: 40px;
+  }
+  #w-pannel-header {
+    background-color: $theme-color;
+    padding: 15px;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    p {
+      color: white;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      line-height: initial;
+      font-size: initial;
+    }
+    span::after {
+      content: '';
+      display: block;
+      width: 15px;
+      height: 0px;
+      top: calc(50% - 2px);
+      position: absolute;
+      border: 2px solid #fff;
+    }
+  }
+}
+
+@keyframes pulse-blue {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($theme-color, 0.7);
+  }
+
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 90px rgba($theme-color, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba($theme-color, 0);
+  }
+}
+
+@media only screen and (max-device-width: 380px) {
+  #w-panel {
+    width: calc(100vw - 40px);
+  }
+}
